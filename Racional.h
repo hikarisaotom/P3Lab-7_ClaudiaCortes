@@ -16,15 +16,16 @@ class Racional{
      Racional();
       Racional(int,int);
     void log();
+    void simplificadornumeros();
 
-     friend istream &operator>>(istream &, Racional&);
-     void operator+=(Racional &) const;
-     const Racional *operator+(const Racional &) const;
-     void operator-=(Racional &) const;
-     const Racional *operator-(const Racional &) const;
-     void operator*=(Racional &) const;
-     const Racional *operator*(const Racional &)const;
-     void operator/=(Racional &) const;
-     const Racional *operator/(const Racional &) const;
+        friend istream & operator>>(istream &, Racional &);
+    void operator+=(Racional &) const;
+    const Racional *operator+(const Racional &) const;
+    void operator-=(Racional &) const;
+    const Racional *operator-(const Racional &) const;
+    void operator*=(Racional &) const;
+    const Racional *operator*(const Racional &)const;
+    void operator/=(Racional &) const;
+    const Racional *operator/(const Racional &) const;
 };
 #endif
