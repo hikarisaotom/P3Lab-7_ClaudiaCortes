@@ -3,18 +3,20 @@ using namespace std;
 #define RACIONAL_H
 
 #include <string>
-class Racional{
-	private:
+class Racional
+{
+  private:
     int numerador;
     int denominador;
-	public:
-     int getdenominador() const;
-     int getnumerador() const;
-     void setnumerador(int);
-     void setdenominador(int);
-     Racional();
-      Racional(int,int);
-    void log();
+
+  public:
+    int getdenominador() const;
+    int getnumerador() const;
+    void setnumerador(int);
+    void setdenominador(int);
+    Racional();
+    Racional(int, int);
+    void log(string);
     void simplificadornumeros();
 
     friend ostream &operator<<(ostream &, const Racional &);

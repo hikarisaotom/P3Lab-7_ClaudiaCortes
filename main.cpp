@@ -1,20 +1,19 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 #include <vector>
 using namespace std;
 #include "Racional.h"
-
+#include <sstream>
 int menu();
 int posicones();
 vector<int> numeros();
 vector<Racional *> Fraciones;
+const Racional *Respuesta;
+void guardar(string, Racional *, Racional *);
 int main()
 {
-
     bool Continuar = 1;
-
     while (Continuar)
     {
         //Llamado del menu del programa.
@@ -29,6 +28,9 @@ int main()
             Racional *R2 = Fraciones[num2];
             const Racional *R3 = (*R1) + (*R2);
             cout << *R1 << " + " << *R2 << " = " << *R3 << endl;
+            Respuesta = R3;
+            guardar(" + ", R1, R2);
+
             break;
         } //Fin del case 1.
         case 2:
@@ -40,17 +42,24 @@ int main()
             Racional *R2 = Fraciones[num2];
             const Racional *R3 = (*R1) - (*R2);
             cout << *R1 << " - " << *R2 << " = " << *R3 << endl;
+            Respuesta = R3;
+            guardar(" - ", R1, R2);
+
             break;
         } //Fin del case 2
 
         case 3:
         { //
             cout << "Usted selecciono: MUltiplicacion" << endl;
-            vector<int> num = numeros();
-            Racional *R1 = new Racional(num[0], num[1]);
-            Racional *R2 = new Racional(num[2], num[3]);
+            int num1 = posicones();
+            int num2 = posicones();
+            Racional *R1 = Fraciones[num1];
+            Racional *R2 = Fraciones[num2];
             const Racional *R3 = (*R1) * (*R2);
             cout << *R1 << " * " << *R2 << " = " << *R3 << endl;
+            Respuesta = R3;
+            guardar(" * ", R1, R2);
+
             break;
         } //Fin del case 3
 
@@ -64,6 +73,8 @@ int main()
             const Racional *R3 = (*R1) / (*R2);
 
             cout << *R1 << " / " << *R2 << " = " << *R3 << endl;
+            Respuesta = R3;
+            guardar(" / ", R1, R2);
 
             break;
         } //Fin del case 4.
@@ -76,12 +87,14 @@ int main()
             Racional *R2 = Fraciones[num2];
             *R1 += (*R2);
             cout << *R1 << " += " << *R2 << " = " << *R1 << endl;
+            Respuesta = R1;
+            guardar(" += ", R1, R2);
+
             break;
         } //Fin del case 5.
         case 6:
         { //
             cout << "Usted selecciono: -=" << endl;
-            cout << "Usted selecciono: +=" << endl;
             int num1 = posicones();
             int num2 = posicones();
             Racional *R1 = Fraciones[num1];
@@ -89,6 +102,9 @@ int main()
             *R1 -= (*R2);
 
             cout << *R1 << " -= " << *R2 << " = " << *R1 << endl;
+            Respuesta = R1;
+            guardar(" -= ", R1, R2);
+
             break;
         } //Fin del case 6.
         case 7:
@@ -101,6 +117,9 @@ int main()
             Racional *R2 = Fraciones[num2];
 
             cout << *R1 << " *= " << *R2 << " = " << *R1 << endl;
+            Respuesta = R1;
+            guardar(" *= ", R1, R2);
+
             break;
         } //Fin del case 7.
         case 8:
@@ -112,6 +131,9 @@ int main()
             Racional *R2 = Fraciones[num2];
             *R1 /= (*R2);
             cout << *R1 << " /= " << *R2 << " = " << *R1 << endl;
+            Respuesta = R1;
+            guardar(" /= ", R1, R2);
+
             break;
         } //Fin del case 8.
         case 9:
@@ -134,6 +156,19 @@ int main()
         cin >> Continuar;
     } //FIn del while.
     return 0;
+}
+
+void guardar(string operador, Racional *R1, Racional *R2)
+{
+    stringstream str;
+    string linea;
+    str << R1->getnumerador() << " / " << R1->getdenominador() << operador
+        << R2->getnumerador() << " / " << R2->getdenominador() << " = "
+        << Respuesta->getnumerador() << " / " << Respuesta->getdenominador();
+    getline(str, linea);
+    cout << "LA LINEA" << endl;
+    ofstream salida("Respuestas.txt", ios::app);
+    salida << linea << endl;
 }
 vector<int> numeros()
 {

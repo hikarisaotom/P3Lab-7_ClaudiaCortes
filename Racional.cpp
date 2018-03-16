@@ -52,11 +52,14 @@ void Racional::setdenominador(int denominador)
     this->denominador = denominador;
 }
 
-void Racional::log()
+void Racional::log(string linea)
 {
+
+    ofstream salida("Respuestas.txt", ios::app);
+    salida << linea << endl;
 }
 
-void Racional::operator+=(Racional &NUM) 
+void Racional::operator+=(Racional &NUM)
 {
     int numerador1 = this->getnumerador() * NUM.getdenominador();
     int numerador2 = this->getdenominador() * NUM.getnumerador();
@@ -73,13 +76,13 @@ const Racional *Racional::operator+(const Racional &NUM) const
     int total = numerador1 + numerador2;
     return new Racional(total, denominador1);
 }
-void Racional::operator-=(Racional & NUM)
+void Racional::operator-=(Racional &NUM)
 {
     int numerador1 = this->getnumerador() * NUM.getdenominador();
     int numerador2 = this->getdenominador() * NUM.getnumerador();
     int denominador1 = this->getdenominador() * NUM.getdenominador();
     int total = numerador1 - numerador2;
-    this-> denominador = denominador1;
+    this->denominador = denominador1;
     this->numerador = total;
 }
 const Racional *Racional::operator-(const Racional &NUM) const
@@ -90,35 +93,35 @@ const Racional *Racional::operator-(const Racional &NUM) const
     int total = numerador1 - numerador2;
     return new Racional(total, denominador1);
 }
-void Racional::operator*=(Racional & NUM)
+void Racional::operator*=(Racional &NUM)
 {
     int numerador1 = numerador * NUM.getnumerador();
     int denominador = denominador * NUM.getdenominador();
     this->denominador = denominador;
     this->numerador = numerador1;
 }
-const Racional *Racional::operator*(const Racional & NUM)const
+const Racional *Racional::operator*(const Racional &NUM) const
 {
     int numeroador1 = numerador * NUM.numerador;
     int denominador1 = denominador * NUM.getdenominador();
     return new Racional(numeroador1, denominador1);
 }
-void Racional::operator/=(Racional & NUM)
+void Racional::operator/=(Racional &NUM)
 {
     int numeroador1 = numerador * NUM.denominador;
     int denominador1 = this->denominador * NUM.getnumerador();
     this->denominador = denominador1;
     this->numerador = numeroador1;
 }
-const Racional *Racional::operator/(const Racional & NUM) const
+const Racional *Racional::operator/(const Racional &NUM) const
 {
     int numeroador1 = numerador * NUM.denominador;
     int denominador1 = denominador * NUM.getnumerador();
     return new Racional(numeroador1, denominador1);
 }
 
-ostream &operator<<(ostream &out, const Racional & NUM)
+ostream &operator<<(ostream &out, const Racional &NUM)
 {
-    out<<NUM.getnumerador() << "/ " << NUM.getdenominador() << endl;
+    out << NUM.getnumerador() << "/ " << NUM.getdenominador() << endl;
     return out;
 }
