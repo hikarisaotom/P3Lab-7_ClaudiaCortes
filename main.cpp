@@ -31,38 +31,38 @@ int menu();
 
         case 3:
         { //
-            cout << "Usted selecciono: " << endl;
+            cout << "Usted selecciono: MUltiplicacion" << endl;
 
             break;
         } //Fin del case 3
 
         case 4:
         { //
-            cout << "Usted selecciono: " << endl;
+            cout << "Usted selecciono: Division" << endl;
 
             break;
         } //Fin del case 4.
         case 5:
         { //
-            cout << "Usted selecciono: " << endl;
+            cout << "Usted selecciono: +=" << endl;
 
             break;
         } //Fin del case 5.
         case 6:
         { //
-            cout << "Usted selecciono: " << endl;
+            cout << "Usted selecciono: -=" << endl;
 
             break;
         } //Fin del case 6.
         case 7:
         { //
-            cout << "Usted selecciono: " << endl;
+            cout << "Usted selecciono: *=" << endl;
 
             break;
         } //Fin del case 7.
         case 8:
         { //
-            cout << "Usted selecciono: " << endl;
+            cout << "Usted selecciono: /=" << endl;
 
             break;
         } //Fin del case 8.

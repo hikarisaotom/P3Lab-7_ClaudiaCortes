@@ -18,13 +18,13 @@ class Racional{
     void log();
 
      friend istream &operator>>(istream &, Racional&);
-     void  operator+=(Racional &);
+     void operator+=(Racional &) const;
      const Racional *operator+(const Racional &) const;
-     void operator-=(Racional &);
+     void operator-=(Racional &) const;
      const Racional *operator-(const Racional &) const;
-     void operator*=(Racional &);
+     void operator*=(Racional &) const;
      const Racional *operator*(const Racional &)const;
-     void operator/=(Racional &);
+     void operator/=(Racional &) const;
      const Racional *operator/(const Racional &) const;
 };
 #endif

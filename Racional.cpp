@@ -22,7 +22,7 @@ int Racional::getnumerador()
 void Racional::setnumerador(int numerador)
 {
     this->numerador = numerador;
-    
+
 }
 void Racional::setdenominador(int denominador)
 {
@@ -33,26 +33,25 @@ void Racional:: log(){
 
 }
 
-
-void Racional::operator+=(Racional &)
+void Racional::operator+=(Racional &) const
 {
 }
 const Racional *Racional::operator+(const Racional &) const
 {
 }
-void Racional::operator-=(Racional &)
+void Racional::operator-=(Racional &) const
 {
 }
 const Racional *Racional::operator-(const Racional &) const
 {
 }
-void Racional::operator*=(Racional &)
+void Racional::operator*=(Racional &) const
 {
 }
 const Racional *Racional::operator*(const Racional &)const
 {
 }
-void Racional::operator/=(Racional &)
+void Racional::operator/=(Racional &) const
 {
 }
 const Racional *Racional::operator/(const Racional &) const
