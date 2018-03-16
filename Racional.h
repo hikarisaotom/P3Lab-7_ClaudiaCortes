@@ -7,10 +7,9 @@ class Racional{
 	private:
     int numerador;
     int denominador;
-		
 	public:
-     int getdenominador();
-     int getnumerador();
+     int getdenominador() const;
+     int getnumerador() const;
      void setnumerador(int);
      void setdenominador(int);
      Racional();
@@ -18,14 +17,14 @@ class Racional{
     void log();
     void simplificadornumeros();
 
-        friend istream & operator>>(istream &, Racional &);
-    void operator+=(Racional &) const;
+    friend ostream &operator<<(ostream &, const Racional &);
+    void operator+=(Racional &);
     const Racional *operator+(const Racional &) const;
-    void operator-=(Racional &) const;
+    void operator-=(Racional &);
     const Racional *operator-(const Racional &) const;
-    void operator*=(Racional &) const;
+    void operator*=(Racional &);
     const Racional *operator*(const Racional &)const;
-    void operator/=(Racional &) const;
+    void operator/=(Racional &);
     const Racional *operator/(const Racional &) const;
 };
 #endif
