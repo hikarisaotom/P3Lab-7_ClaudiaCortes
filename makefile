@@ -1,10 +1,11 @@
-EXE: main.o 
-	g++ main.o -o EXE 
+#build
+EXE: main.o Racional.o
+	g++ main.o Racional.o -o EXE -lncurses
 
-main.o: main.cpp 
-	g++ -c main.cpp
+#main
+main.o: main.cpp Racional.h
+	g++ -c main.cpp      
 
-
-
-
-
+#Racional
+Racional.o:  Racional.cpp Racional.h  
+	g++ -c Racional.cpp

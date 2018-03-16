@@ -2,4 +2,4 @@ Nombre: Claudia Patricia Cortes.
 #CUenta: 11711357
 Usuario de Git: Hikarisaotom
 Repositorio:
-https://github.com/hikarisaotom/P3Lab-7_ClaudiaCortes
+https://github.com/hikarisaotom/P3Lab-7_ClaudiaCortes.git
