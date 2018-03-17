@@ -99,7 +99,7 @@ void Racional::operator*=(Racional &NUM)
 {
     int numeroador1 = this->numerador * NUM.numerador;
     int denominador1 = this->denominador * NUM.getdenominador();
-    this->denominador = denominador;
+    this->denominador = denominador1;
     this->numerador = numeroador1;
     simplificadornumeros();
 }
