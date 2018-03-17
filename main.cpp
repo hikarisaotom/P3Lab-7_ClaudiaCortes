@@ -115,7 +115,7 @@ int main()
             int num2 = posicones();
             Racional *R1 = Fraciones[num1];
             Racional *R2 = Fraciones[num2];
-
+            *R1 *= (*R2);
             cout << *R1 << " *= " << *R2 << " = " << *R1 << endl;
             Respuesta = R1;
             guardar(" *= ", R1, R2);
