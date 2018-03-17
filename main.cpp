@@ -146,6 +146,7 @@ int main()
         } //Fin del case 8.
         default:
         { //
+       
             cout << "Usted esta saliendo" << endl;
             Continuar = 100;
             break;
