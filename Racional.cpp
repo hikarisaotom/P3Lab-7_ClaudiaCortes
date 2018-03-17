@@ -67,6 +67,7 @@ void Racional::operator+=(Racional &NUM)
     int total = numerador1 + numerador2;
     this->denominador = denominador1;
     this->numerador = total;
+    simplificadornumeros();
 }
 const Racional *Racional::operator+(const Racional &NUM) const
 {
@@ -84,6 +85,7 @@ void Racional::operator-=(Racional &NUM)
     int total = numerador1 - numerador2;
     this->denominador = denominador1;
     this->numerador = total;
+    simplificadornumeros();
 }
 const Racional *Racional::operator-(const Racional &NUM) const
 {
@@ -95,10 +97,11 @@ const Racional *Racional::operator-(const Racional &NUM) const
 }
 void Racional::operator*=(Racional &NUM)
 {
-    int numerador1 = numerador * NUM.getnumerador();
-    int denominador = denominador * NUM.getdenominador();
+    int numeroador1 = this->numerador * NUM.numerador;
+    int denominador1 = this->denominador * NUM.getdenominador();
     this->denominador = denominador;
-    this->numerador = numerador1;
+    this->numerador = numeroador1;
+    simplificadornumeros();
 }
 const Racional *Racional::operator*(const Racional &NUM) const
 {
@@ -109,9 +112,10 @@ const Racional *Racional::operator*(const Racional &NUM) const
 void Racional::operator/=(Racional &NUM)
 {
     int numeroador1 = numerador * NUM.denominador;
-    int denominador1 = this->denominador * NUM.getnumerador();
+    int denominador1 = denominador * NUM.getnumerador();
     this->denominador = denominador1;
     this->numerador = numeroador1;
+    simplificadornumeros();
 }
 const Racional *Racional::operator/(const Racional &NUM) const
 {
